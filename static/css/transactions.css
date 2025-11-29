@@ -1,0 +1,252 @@
+/* ===========================================
+   GLOBAL PAGE STYLING
+=========================================== */
+.page {
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: #f4f6fb;
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.center {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1b1b1b;
+}
+
+/* Back Link */
+.back {
+  text-decoration: none;
+  color: #3047ff;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 15px;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.back:hover {
+  color: #1a2ef0;
+  transform: translateX(-3px);
+}
+
+/* ===========================================
+   TABLE WRAPPER
+=========================================== */
+.table-wrap {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow: hidden;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ===========================================
+   TABLE DESIGN
+=========================================== */
+.txn-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+/* Sticky Header */
+.txn-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #eef2ff;
+}
+
+.txn-table th {
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 2px solid #e1e4f0;
+  color: #1e1e1e;
+}
+
+/* Zebra Rows */
+.txn-table tbody tr:nth-child(even) {
+  background: #f8f9ff;
+}
+
+.txn-table tbody tr:hover {
+  background: #eef2ff;
+  transition: 0.2s;
+}
+
+.txn-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid #ececec;
+}
+
+/* Alignment */
+.txn-table td:nth-child(2) { 
+  text-align: right; 
+  font-weight: 600;
+}
+
+.txn-table td:nth-child(4) { 
+  text-align: center; 
+  color: #555;
+}
+
+/* ===========================================
+   BADGE STYLING (Income / Expense)
+=========================================== */
+.income {
+  background: #d4ffe6;
+  color: #0f8c39;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.expense {
+  background: #ffe0e0;
+  color: #d62828;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* ===========================================
+   PAGINATION
+=========================================== */
+.pager {
+  margin-top: 15px;
+  text-align: center;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pager button {
+  padding: 8px 18px;
+  border: none;
+  background: #3047ff;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pager button:hover {
+  background: #1c2ee6;
+  transform: translateY(-2px);
+}
+
+.pager button:disabled {
+  background: #c9cef8;
+  cursor: not-allowed;
+}
+
+/* Page number */
+#pageInfo {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ===========================================
+   EXPORT BUTTON
+=========================================== */
+#exportBtn {
+  margin: 25px auto;
+  display: block;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #274bff, #5265ff);
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(47,63,255,0.3);
+  transition: 0.25s;
+}
+
+#exportBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 28px rgba(47,63,255,0.4);
+}
+
+/* ===========================================
+   CHART BLOCK
+=========================================== */
+.chart-block {
+  margin: 45px auto;
+  max-width: 1000px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.chart-block h3 {
+  font-size: 20px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* ===========================================
+   RESPONSIVE : TABLE → CARDS
+=========================================== */
+@media (max-width: 768px) {
+
+  /* Hide table on mobile */
+  .txn-table {
+    display: none;
+  }
+
+  /* Card layout */
+  tbody#txnTableBody {
+    display: grid;
+    gap: 18px;
+  }
+
+  .tx-card {
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    padding: 18px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .tx-card .row1 {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+  }
+
+  .tx-card .row2 {
+    font-size: 14px;
+    color: #444;
+  }
+
+  .tx-card .row3 {
+    font-size: 13px;
+    opacity: 0.7;
+  }
+}
