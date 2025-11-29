@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/css/signup.css">
+
+<div class="auth-wrapper">
+
+  <div class="signup-image-box">
+    <img src="{{ url_for('static', filename='images/signup.jpg') }}" alt="Growth Image">
+  </div>
+
+  <div class="auth-card">
+    <h2>Sign Up</h2>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="/signup">
+      <label>UserName</label><input name="username" required />
+      <label>Occupation</label><input name="occupation" />
+      <label>Mobile no.</label><input name="mobile" />
+      <label>Email</label><input name="email" type="email" required />
+      <label>Password</label><input name="password" type="password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p>Already have account? <a href="/signin">Sign In</a></p>
+  </div>
+
+</div>
+
+{% endblock %}
